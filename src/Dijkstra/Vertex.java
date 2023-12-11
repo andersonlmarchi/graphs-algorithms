@@ -19,10 +19,7 @@ public class Vertex {
     }
     
     public int hashCode() {
-      int prime = 31;
-      int result = 1;
-      result = 31 * result + ((this.id == null) ? 0 : this.id.hashCode());
-      return result;
+      return 31 + ((this.id == null) ? 0 : this.id.hashCode());
     }
     
     public boolean equals(Object obj) {
