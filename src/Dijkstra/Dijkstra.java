@@ -102,7 +102,7 @@ public class Dijkstra {
         return this.settledNodes.contains(vertex);
     }
 
-    private int getShortestDistance(Vertex destination) {
+    public int getShortestDistance(Vertex destination) {
         Integer d = this.distance.get(destination);
         if (d == null)
             return Integer.MAX_VALUE; 

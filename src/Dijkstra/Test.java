@@ -169,14 +169,17 @@ public class Test {
         Dijkstra dijkstra = new Dijkstra(new Graph(this.nodes, this.edges));
         Vertex start = this.nodes.get(1);
         Vertex end = this.nodes.get(11);
+        double distance = 0;
 
         LinkedList<Vertex> shortestPath = dijkstra.findShortestPath(start, end);
 
         System.out.println("\nShortest Path from " + start.getName() + " to " + end.getName() + ":");
         if (shortestPath != null && !shortestPath.isEmpty()) {
             for (Vertex vertex : shortestPath) {
-                System.out.println(vertex);
+                distance = dijkstra.getShortestDistance(vertex);
+                System.out.print(vertex + " (" + dijkstra.getShortestDistance(vertex) + ") -> ");
             }
+            System.out.println("Total distance: " + distance);
         } else {
             System.out.println("No path found from " + start.getName() + " to " + end.getName() + "!");
         }
