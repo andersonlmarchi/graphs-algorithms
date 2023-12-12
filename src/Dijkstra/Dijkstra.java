@@ -51,12 +51,10 @@ public class Dijkstra {
     private void findMinimalDistances(Vertex node) {
         List<Vertex> adjacentNodes = getNeighbors(node);
         for (Vertex target : adjacentNodes) {
-            if (getShortestDistance(target) > getShortestDistance(node) + 
-            getDistance(node, target)) {
-            this.distance.put(target, 
-                Integer.valueOf(getShortestDistance(node) + getDistance(node, target)));
-            this.predecessors.put(target, node);
-            this.unSettledNodes.add(target);
+            if (getShortestDistance(target) > getShortestDistance(node) + getDistance(node, target)) {
+                this.distance.put(target, Integer.valueOf(getShortestDistance(node) + getDistance(node, target)));
+                this.predecessors.put(target, node);
+                this.unSettledNodes.add(target);
             } 
         } 
     }

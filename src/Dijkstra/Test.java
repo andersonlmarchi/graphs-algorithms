@@ -127,10 +127,11 @@ public class Test {
 
     public static void main(String[] args) {
         Test test = new Test();
-        test.graphTest();
 
         // d) Test finding the shortest path
         test.findShortestPath();
+        
+        test.graphTest();
     }
 
     private void addLane(String laneId, int sourceLocNo, int destLocNo, int duration) {
@@ -140,13 +141,6 @@ public class Test {
 
     private void graphTest() {
         Dijkstra dijkstra = new Dijkstra(new Graph(this.nodes, this.edges));
-
-        // a) Test removing a vertex
-        Vertex vertexToRemove = this.nodes.get(8);
-        dijkstra.removeVertex(vertexToRemove);
-        System.out.println("\nGraph after removing Guarda:");
-        System.out.println("Vertices: " + this.nodes);
-        System.out.println("Edges: " + this.edges);
 
         // b) Test checking if the graph is connected
         boolean isConnected = dijkstra.isGraphConnected();
@@ -163,6 +157,13 @@ public class Test {
         // f) Test checking if the graph is Hamiltonian
         String hamiltonianType = dijkstra.getHamiltonianType();
         System.out.println("\nGraph Hamiltonian Type: " + hamiltonianType);
+
+        // a) Test removing a vertex
+        Vertex vertexToRemove = this.nodes.get(8);
+        dijkstra.removeVertex(vertexToRemove);
+        System.out.println("\nGraph after removing Guarda:");
+        System.out.println("Vertices: " + this.nodes);
+        System.out.println("Edges: " + this.edges);
     }
 
     private void findShortestPath() {
